@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lambina – Catálogo</title>
+  <style>
+    :root { --bg:#0b0f14; --panel:#121821; --muted:#a5b1c2; --text:#e6edf3; --chip:#1b2430; --link:#7aa7ff; }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,Segoe UI,Roboto,sans-serif}
+    header{position:sticky;top:0;z-index:10;backdrop-filter:blur(8px);background:linear-gradient(180deg,rgba(18,24,33,.9),rgba(18,24,33,.6),rgba(18,24,33,0));padding:16px 20px 10px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+    .nav{display:flex;gap:14px;margin-bottom:10px}
+    .nav a{color:var(--muted);text-decoration:none;font-size:14px}
+    .nav a:hover{color:var(--link)}
+    h1{margin:4px 0 12px;font-size:22px}
+    .controls{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .controls input,.controls select{background:var(--chip);color:var(--text);border:1px solid rgba(255,255,255,.08);outline:none;padding:10px 12px;border-radius:10px;font-size:14px}
+    .pillbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .pill{background:var(--chip);border:1px solid rgba(255,255,255,.08);padding:6px 10px;border-radius:20px;color:var(--muted);font-size:12px}
+    main{padding:18px 0 24px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}
+    .card{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:8px}
+    .thumb{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:10px;background:#0e141c}
+    .title{font-size:14px;font-weight:600;margin-top:2px}
+    .meta{font-size:12px;color:#99a3ad;display:flex;gap:8px;align-items:center}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav class="nav">
+        <a href="./index.html">Inicio</a>
+        <a href="./catalogo.html" style="color:#fff">Catálogo</a>
+        <a href="./comandos.html">Comandos</a>
+        <a href="./rates.html">Rates</a>
+      </nav>
+      <h1>Catálogo de Cartas</h1>
+      <div class="controls">
+        <input id="q" placeholder="Buscar por nombre…" />
+        <select id="serie"></select>
+      </div>
+      <div class="pillbar" id="stats"></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="grid" id="grid"></div>
+  </main>
+
+  <script>
+    async function load() {
+      const res = await fetch('./cartas_database.json', {cache:'no-store'});
+      if (!res.ok) throw new Error('No se pudo cargar cartas_database.json');
+      const data = await res.json();
+      const cartas = (data.cartas || []).map(c => {
+        const img = String(c.imagen || '');
+        const base = img.split('/').pop().split('\\').pop(); // basename seguro
+        return { ...c, imagen: `./Cartas/${base}` };
+      });
+
+      const grid = document.getElementById('grid');
+      const stats = document.getElementById('stats');
+      const serieSel = document.getElementById('serie');
+      const q = document.getElementById('q');
+
+      const series = [...new Set(cartas.map(c => c.serie))].sort();
+      serieSel.innerHTML = '<option value="">Todas las series</option>' + series.map(s => `<option>${s}</option>`).join('');
+
+      function statChips(list) {
+        const total = list.length;
+        const porSerie = Object.entries(list.reduce((a,c)=>((a[c.serie]=(a[c.serie]||0)+1),a),{}))
+          .sort((a,b)=>b[1]-a[1]).slice(0,12).map(([s,n])=>`<span class="pill">${s}: ${n}</span>`).join('');
+        return `<span class=\"pill\">Total: ${total}</span>${porSerie}`;
+      }
+
+      function render(list) {
+        stats.innerHTML = statChips(list);
+        grid.innerHTML = list.map(c => `
+          <div class="card">
+            <img class="thumb" loading="lazy" src="${c.imagen}" alt="${c.nombre}" onerror="this.style.display='none'" />
+            <div class="title">${c.nombre}</div>
+            <div class="meta">${c.serie}</div>
+          </div>
+        `).join('');
+      }
+
+      function applyFilters(){
+        const term = q.value.trim().toLowerCase();
+        const sr = serieSel.value;
+        const list = cartas.filter(c => (!term || c.nombre.toLowerCase().includes(term)) && (!sr || c.serie===sr));
+        render(list);
+      }
+
+      q.addEventListener('input', applyFilters);
+      serieSel.addEventListener('change', applyFilters);
+      render(cartas);
+    }
+
+    load().catch(err => {
+      document.getElementById('grid').innerHTML = `<div style="color:#f87171">Error cargando: ${err}</div>`;
+    });
+  </script>
+</body>
+</html>

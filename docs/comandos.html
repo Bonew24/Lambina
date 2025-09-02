@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lambina – Comandos</title>
+  <style>
+    :root { --bg:#0b0f14; --panel:#121821; --muted:#a5b1c2; --text:#e6edf3; --chip:#1b2430; --link:#7aa7ff; }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,Segoe UI,Roboto,sans-serif}
+    .wrap{max-width:980px;margin:0 auto;padding:0 16px}
+    header{padding:24px 0 12px}
+    .nav{display:flex;gap:14px;margin-bottom:16px}
+    .nav a{color:var(--muted);text-decoration:none;font-size:14px}
+    .nav a:hover{color:var(--link)}
+    h1{margin:0 0 12px}
+    .card{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:14px;margin:10px 0}
+    .k{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;background:var(--chip);padding:2px 6px;border-radius:8px}
+    ul{margin:8px 0 0 18px;color:#b6c2cf}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <nav class="nav">
+        <a href="./index.html">Inicio</a>
+        <a href="./catalogo.html">Catálogo</a>
+        <a href="./comandos.html" style="color:#fff">Comandos</a>
+        <a href="./rates.html">Rates</a>
+      </nav>
+      <h1>Comandos</h1>
+    </header>
+
+    <section>
+      <div class="card">
+        <b>Drop y visualización</b>
+        <ul>
+          <li><span class="k">ldrop</span> o <span class="k">ld</span>: lanza un drop (respeta cooldown/eventos).</li>
+          <li><span class="k">lv CÓDIGO</span>: ver una carta concreta; sin código, muestra tu última.</li>
+          <li><span class="k">lsl SERIE</span>: lista cartas de una serie de la base.</li>
+          <li><span class="k">lcl NOMBRE</span>: busca cartas por nombre en la base.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <b>Inventario, colección y trading</b>
+        <ul>
+          <li><span class="k">li</span>: tu inventario (Nist, Lambitos, objetos).</li>
+          <li><span class="k">lc</span>: tu colección; se muestra “nuevo primero”.</li>
+          <li><span class="k">lt</span>: iniciar un trade con otro usuario.</li>
+          <li><span class="k">lg</span>: dar una carta a otro usuario.</li>
+          <li><span class="k">lfav CÓDIGO</span>: marca tu favorita (se ve más grande en <span class="k">luser</span>).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <b>Tienda y objetos</b>
+        <ul>
+          <li><span class="k">lshop</span>: abre la tienda interactiva.</li>
+          <li><span class="k">lshop buy OBJ [CANT]</span>: compra por texto.</li>
+          <li><span class="k">luse OBJ</span>: usa cajas (Rainbow/Gold/Black). Drop/Grab se usan desde sus vistas.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <b>Burn y entrenamiento</b>
+        <ul>
+          <li><span class="k">lb CÓDIGO</span> o <span class="k">lmb</span>: burnea una carta o abre el multi-burn.</li>
+          <li><span class="k">lfeed CÓDIGO</span>: alimentar una carta con otras para subir de nivel.</li>
+          <li><span class="k">ls</span> o <span class="k">lstats</span>: ver estadísticas de la carta en scratch.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <b>Diaria y perfiles</b>
+        <ul>
+          <li><span class="k">ldaily</span>: misiones diarias con botón de reclamo.</li>
+          <li><span class="k">luser</span>: perfil compacto con avatar y favorita.</li>
+          <li><span class="k">lcd</span>: ver cooldowns.</li>
+          <li><span class="k">lhola</span>: saludo con cooldown 24h.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

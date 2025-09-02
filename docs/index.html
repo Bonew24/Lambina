@@ -3,176 +3,61 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LambotCG – Catálogo de Cartas</title>
+  <title>Lambina – Home</title>
   <style>
-    :root {
-      --bg: #0b0f14;
-      --panel: #121821;
-      --muted: #a5b1c2;
-      --text: #e6edf3;
-      --accent: #6ca0ff;
-      --chip: #1b2430;
-      --gold: #f1c40f;
-      --rainbow: linear-gradient(90deg,#ff6b6b,#feca57,#1dd1a1,#48dbfb,#5f27cd);
-      --black: #111;
-      --common: #6b7280;
-      --rare: #3b82f6;
-      --epic: #a855f7;
-      --legendary: #f59e0b;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; background: var(--bg); color: var(--text);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
-      line-height: 1.4;
-    }
-    header {
-      position: sticky; top: 0; z-index: 10; backdrop-filter: blur(8px);
-      background: linear-gradient(180deg, rgba(18,24,33,0.9), rgba(18,24,33,0.6), rgba(18,24,33,0));
-      padding: 16px 20px 10px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
-    h1 { margin: 0 0 8px; font-size: 22px; letter-spacing: .3px; }
-    .controls { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
-    .controls input, .controls select {
-      background: var(--chip); color: var(--text); border: 1px solid rgba(255,255,255,.08);
-      outline: none; padding: 10px 12px; border-radius: 10px; font-size: 14px;
-    }
-    .pillbar { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
-    .pill {
-      background: var(--chip); border: 1px solid rgba(255,255,255,.08);
-      padding: 6px 10px; border-radius: 20px; color: var(--muted); font-size: 12px;
-    }
-    main { padding: 18px 0 24px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 14px; }
-    .card {
-      background: var(--panel); border: 1px solid rgba(255,255,255,.06);
-      border-radius: 14px; padding: 10px; display: flex; flex-direction: column; gap: 8px;
-      transition: transform .15s ease, box-shadow .15s ease;
-    }
-    .card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.25); }
-    .thumb { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 10px; background:#0e141c; }
-    .title { font-size: 14px; font-weight: 600; margin-top: 2px; }
-    .meta { font-size: 12px; color: var(--muted); display: flex; gap: 8px; align-items:center; }
-    .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
-    .dot.common { background: var(--common); }
-    .dot.rare { background: var(--rare); }
-    .dot.epic { background: var(--epic); }
-    .dot.legendary { background: var(--legendary); }
-    .dot.gold { background: var(--gold); }
-    .dot.black { background: var(--black); border:1px solid #333; }
-    .dot.rainbow { background: #fff; background-image: var(--rainbow); }
-    footer { color: var(--muted); font-size: 12px; padding: 14px 16px 30px; text-align: center; }
+    :root { --bg:#0b0f14; --panel:#121821; --muted:#a5b1c2; --text:#e6edf3; --chip:#1b2430; --link:#7aa7ff; --accent:#ff69b4; }
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(1200px 600px at 10% -10%, rgba(255,105,180,.12), transparent),var(--bg);color:var(--text);font-family:system-ui,Segoe UI,Roboto,sans-serif}
+    .wrap{max-width:980px;margin:0 auto;padding:0 16px}
+    header{padding:28px 0 8px}
+    .nav{display:flex;gap:14px;margin-bottom:18px}
+    .nav a{color:var(--muted);text-decoration:none;font-size:14px}
+    .nav a:hover{color:var(--link)}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;padding:20px 0 32px}
+    h1{font-size:40px;margin:0 0 10px}
+    p.lead{color:#b6c2cf;font-size:16px;margin:0 0 16px}
+    .cta{display:flex;gap:12px;margin-top:12px}
+    .btn{background:var(--chip);color:var(--text);border:1px solid rgba(255,255,255,.08);padding:10px 14px;border-radius:12px;text-decoration:none}
+    .btn.primary{background:var(--accent);border-color:#ff8dc4}
+    .panel{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:14px}
+    footer{color:#8292a3;font-size:12px;padding:26px 0 34px}
+    @media (max-width:860px){.hero{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <h1>Catálogo de Cartas</h1>
-      <div class="controls">
-        <input id="q" placeholder="Buscar por nombre…" />
-        <select id="serie"></select>
-        <select id="rareza">
-          <option value="">Todas las rarezas</option>
-          <option>Común</option>
-          <option>Rara</option>
-          <option>Épica</option>
-          <option>Legendaria</option>
-          <option>Gold</option>
-          <option>Rainbow</option>
-          <option>Black</option>
-          <option>3D</option>
-        </select>
+  <div class="wrap">
+    <header>
+      <nav class="nav">
+        <a href="./index.html" style="color:#fff">Inicio</a>
+        <a href="./catalogo.html">Catálogo</a>
+        <a href="./comandos.html">Comandos</a>
+        <a href="./rates.html">Rates</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Lambina, el bot TCG de Lambo</h1>
+        <p class="lead">Colecciona, intercambia y entrena cartas. Eventos dinámicos, drops especiales y una economía con Nist y Lambitos.</p>
+        <div class="cta">
+          <a class="btn primary" href="./catalogo.html">Ver catálogo</a>
+          <a class="btn" href="./comandos.html">Comandos</a>
+          <a class="btn" href="./rates.html">Rates</a>
+        </div>
       </div>
-      <div class="pillbar" id="stats"></div>
-    </div>
-  </header>
+      <div class="panel">
+        <b>Novedades</b>
+        <ul>
+          <li>Eventos globales con persistencia.</li>
+          <li>Shiny drop (0.1%) con 3 cartas raras.</li>
+          <li>Cap global 3D (máx. 3 por tipo).</li>
+        </ul>
+      </div>
+    </section>
 
-  <main class="wrap">
-    <div class="grid" id="grid"></div>
-  </main>
-
-  <footer id="foot"></footer>
-
-  <script>
-    async function load() {
-      const res = await fetch('./cartas_database.json');
-      const data = await res.json();
-      const cartas = (data.cartas || []).map(c => ({
-        ...c,
-        imagen: c.imagen.replace(/^([A-Za-z]:)?\\\\.*?Cartas\\\\/,'./Cartas/').replace(/\\\\/g,'/')
-      }));
-
-      const grid = document.getElementById('grid');
-      const stats = document.getElementById('stats');
-      const serieSel = document.getElementById('serie');
-      const rarezaSel = document.getElementById('rareza');
-      const q = document.getElementById('q');
-
-      const series = [...new Set(cartas.map(c => c.serie))].sort();
-      serieSel.innerHTML = '<option value="">Todas las series</option>' + series.map(s => `<option>${s}</option>`).join('');
-
-      function statChips(list) {
-        const total = list.length;
-        const porSerie = Object.entries(list.reduce((acc, c) => ((acc[c.serie]=(acc[c.serie]||0)+1), acc), {}))
-          .sort((a,b)=>b[1]-a[1]).slice(0,8).map(([s,n])=>`<span class="pill">${s}: ${n}</span>`).join('');
-        const porRareza = Object.entries(list.reduce((acc, c) => ((acc[c.rareza]=(acc[c.rareza]||0)+1), acc), {}))
-          .sort((a,b)=>b[1]-a[1]).map(([r,n])=>`<span class="pill">${r}: ${n} (${(n*100/total).toFixed(1)}%)</span>`).join('');
-        return `<span class="pill">Total: ${total}</span>${porSerie}${porRareza}`;
-      }
-
-      function dotClass(r) {
-        const k = r.toLowerCase();
-        if (k.includes('gold')) return 'gold';
-        if (k.includes('rainbow')) return 'rainbow';
-        if (k.includes('black')) return 'black';
-        if (k.includes('3d')) return 'legendary';
-        if (k.includes('legend')) return 'legendary';
-        if (k.includes('épica') || k.includes('epic')) return 'epic';
-        if (k.includes('rara') || k.includes('rare')) return 'rare';
-        return 'common';
-      }
-
-      function render(list) {
-        stats.innerHTML = statChips(list);
-        grid.innerHTML = list.map(c => `
-          <div class="card">
-            <img class="thumb" loading="lazy" src="${c.imagen}" alt="${c.nombre}" />
-            <div class="title">${c.nombre}</div>
-            <div class="meta">
-              <span class="dot ${dotClass(c.rareza)}"></span>
-              <span>${c.rareza}</span>
-              <span>•</span>
-              <span>${c.serie}</span>
-            </div>
-          </div>
-        `).join('');
-        document.getElementById('foot').textContent = `${list.length} cartas`;
-      }
-
-      function applyFilters() {
-        const term = q.value.trim().toLowerCase();
-        const sr = serieSel.value;
-        const rr = rarezaSel.value;
-        const list = cartas.filter(c =>
-          (!term || c.nombre.toLowerCase().includes(term)) &&
-          (!sr || c.serie === sr) &&
-          (!rr || c.rareza === rr)
-        );
-        render(list);
-      }
-
-      q.addEventListener('input', applyFilters);
-      serieSel.addEventListener('change', applyFilters);
-      rarezaSel.addEventListener('change', applyFilters);
-
-      render(cartas);
-    }
-
-    load().catch(err => {
-      document.getElementById('grid').innerHTML = `<div style="color:#f87171">Error cargando cartas: ${err}</div>`;
-    });
-  </script>
+    <footer>
+      Lambina © 2025
+    </footer>
+  </div>
 </body>
 </html>
