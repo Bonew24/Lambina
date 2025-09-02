@@ -84,6 +84,44 @@
       </div>
 
       <div class="card">
+        <div class="card-header"><b>Estadísticas y Scratch</b></div>
+        <div class="muted">
+          Cada carta tiene 4 atributos: <b>Health</b>, <b>Attack</b>, <b>Defense</b>, <b>Speed</b> y un <b>Total</b> (suma ponderada).
+          Se generan al usar <code>lscratch &lt;CÓDIGO&gt;</code> sobre la carta. El nivel inicia en 1 (cap 15).
+        </div>
+        <table class="striped" style="width:100%;border-collapse:collapse;margin-top:8px">
+          <tr>
+            <th style="text-align:left;color:#9fb0c3">Rareza</th>
+            <th style="text-align:left;color:#9fb0c3">Total al rascar</th>
+            <th style="text-align:left;color:#9fb0c3">Coste lscratch</th>
+          </tr>
+          <tr>
+            <td>Común</td>
+            <td>200–600 (≥500 muy raro)</td>
+            <td>2000 lambitos</td>
+          </tr>
+          <tr>
+            <td>Rainbow</td>
+            <td>500–600 (garantizado)</td>
+            <td>4000 lambitos</td>
+          </tr>
+          <tr>
+            <td>Black</td>
+            <td>400–700</td>
+            <td>500 lambitos</td>
+          </tr>
+          <tr>
+            <td>3D</td>
+            <td>300–400</td>
+            <td>10000 lambitos</td>
+          </tr>
+        </table>
+        <div class="note" style="margin-top:6px">
+          Consulta stats con <code>ls &lt;CÓDIGO&gt;</code> o <code>lstats</code>. La XP se gana alimentando (ver sección siguiente).
+        </div>
+      </div>
+
+      <div class="card">
         <div class="card-header">
           <b>Eventos globales</b>
           <span class="badge">Prob. activación: 3%</span>
