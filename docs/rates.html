@@ -17,14 +17,21 @@
     .nav a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:linear-gradient(90deg,#ff69b4,#7aa7ff);transform:scaleX(0);transform-origin:0 50%;transition:transform .25s ease}
     .nav a:hover{color:var(--link)}
     .nav a:hover::after{transform:scaleX(1)}
-    h1{margin:0 0 12px}
+    h1{margin:0 0 12px;letter-spacing:.2px}
     .card{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:14px;margin:10px 0}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
-    table{width:100%;border-collapse:collapse}
-    th,td{padding:6px 8px;border-bottom:1px solid rgba(255,255,255,.06);font-size:14px;color:#c3cfdb}
-    th{color:#9fb0c3;text-align:left}
-    .k{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;background:var(--chip);padding:2px 6px;border-radius:8px}
-    @media (prefers-reduced-motion: reduce){ *{animation:none !important;transition:none !important} }
+    .card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+    .badge{display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border-radius:999px;font-size:12px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.06)}
+    .badge.pink{background:rgba(255,105,180,.12);border-color:rgba(255,105,180,.35);color:#ffd1e6}
+    .badge.gold{background:linear-gradient(135deg,rgba(255,215,0,.12),rgba(255,175,0,.12));border-color:rgba(255,215,0,.35);color:#ffe8a3}
+    .badge.rainbow{background:linear-gradient(135deg,rgba(122,167,255,.18),rgba(168,255,210,.18));border-color:rgba(122,167,255,.35);color:#d7e6ff}
+    .badge.dark{background:rgba(0,0,0,.35);border-color:rgba(255,255,255,.2);color:#d1d5db}
+    .rarity-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:6px}
+    .rarity-item{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:10px}
+    .rarity-item b{display:block;margin-bottom:6px}
+    .note{color:#9fb0c3;font-size:13px}
+    .muted{color:#a5b1c2}
+    .callout{background:rgba(122,167,255,.08);border:1px dashed rgba(122,167,255,.35);padding:10px;border-radius:12px;color:#d7e6ff}
+    table.striped tr:nth-child(odd) td{background:rgba(255,255,255,.02)}
   </style>
 </head>
 <body>
@@ -36,68 +43,84 @@
         <a href="./comandos.html">Comandos</a>
         <a href="./rates.html" style="color:#fff">Rates</a>
       </nav>
-      <h1>Rates y reglas</h1>
+      <h1>Probabilidades y reglas</h1>
     </header>
 
     <section class="grid">
       <div class="card">
-        <b>Raridades base en drop normal</b>
-        <table>
-          <tr><th>Rareza</th><th>Prob.</th><th>Notas</th></tr>
-          <tr><td>3D</td><td>0.1%</td><td>Sin marco/serie/nombre/V. Cap global: máx. 3 por tipo.</td></tr>
-          <tr><td>Black</td><td>0.1%</td><td>Recompensa de burn fija: 1 lambito.</td></tr>
-          <tr><td>Rainbow</td><td>0.5%</td><td>Shiny override respeta 40/40/10/10.</td></tr>
-          <tr><td>Gold</td><td>0.5%</td><td>Burn: 1000–1500 lambitos.</td></tr>
-        </table>
-        <small>El resto son comunes (con V).</small>
+        <div class="card-header">
+          <b>Rarezas base en un drop normal</b>
+        </div>
+        <div class="rarity-grid">
+          <div class="rarity-item">
+            <b>3D <span class="badge dark">0.1%</span></b>
+            <div class="note">Render sin marco/serie/nombre/V. Cap global: máx. 3 por tipo.</div>
+          </div>
+          <div class="rarity-item">
+            <b>Black <span class="badge dark">0.1%</span></b>
+            <div class="note">Al quemar: 1 lambito.</div>
+          </div>
+          <div class="rarity-item">
+            <b>Rainbow <span class="badge rainbow">0.5%</span></b>
+            <div class="note">En shiny se respeta 40/40/10/10.</div>
+          </div>
+          <div class="rarity-item">
+            <b>Gold <span class="badge gold">0.5%</span></b>
+            <div class="note">Al quemar: 1000–1500 lambitos.</div>
+          </div>
+        </div>
+        <div class="note" style="margin-top:8px">El resto de cartas son normales (con V).</div>
       </div>
 
       <div class="card">
-        <b>Shiny drop</b>
-        <ul>
-          <li>Probabilidad: 0.1% al iniciar un drop.</li>
-          <li>Genera exactamente 3 cartas raras con distribución: 40% Gold, 40% Rainbow, 10% Black, 10% 3D.</li>
+        <div class="card-header">
+          <b>Shiny drop</b>
+          <span class="badge pink">0.1%</span>
+        </div>
+        <ul class="muted" style="margin:6px 0 0 18px">
+          <li>Se activa al iniciar un drop.</li>
+          <li>Genera exactamente 3 cartas raras con distribución 40% Gold, 40% Rainbow, 10% Black y 10% 3D.</li>
         </ul>
       </div>
 
       <div class="card">
-        <b>Eventos globales</b>
-        <ul>
-          <li>X2 rares (1h): duplica prob. de 3D/Black/Rainbow/Gold.</li>
-          <li>Cooldown reducido: 2/3/5 min (ajusta cooldown de claim y ld).</li>
-          <li>Drop de 4 cartas (30 min): agrega 4º botón solo durante el evento.</li>
-          <li>Solo 1 evento activo a la vez. Persisten y avisan al finalizar.</li>
+        <div class="card-header">
+          <b>Eventos globales</b>
+          <span class="badge">Prob. activación: 3%</span>
+        </div>
+        <ul class="muted" style="margin:6px 0 0 18px">
+          <li>X2 rarezas (1h): duplica la probabilidad de 3D, Black, Rainbow y Gold.</li>
+          <li>Cooldown reducido (20–50 min): baja los tiempos de drop/claim.</li>
+          <li>Drop de 4 cartas (30 min): aparece un 4º botón durante el evento.</li>
+          <li>Solo un evento activo a la vez. Persisten y se anuncian al finalizar.</li>
         </ul>
       </div>
 
       <div class="card">
-        <b>Recompensas de burn</b>
-        <table>
-          <tr><th>Tipo</th><th>Recompensa</th></tr>
+        <div class="card-header"><b>Recompensas al quemar (burn)</b></div>
+        <table class="striped" style="width:100%;border-collapse:collapse">
+          <tr><th style="text-align:left;color:#9fb0c3">Tipo</th><th style="text-align:left;color:#9fb0c3">Recompensa</th></tr>
           <tr><td>Gold</td><td>1000–1500 lambitos</td></tr>
           <tr><td>Black</td><td>1 lambito</td></tr>
-          <tr><td>Comunes (por V)</td><td>
-            V≤10: 240–500 • 11–100: 100–240 • 101–500: 60–120 • 501–1000: 35–70 • >1000: 15–30
-          </td></tr>
+          <tr><td>Normal (según V)</td><td>V≤10: 240–500 • 11–100: 100–240 • 101–500: 60–120 • 501–1000: 35–70 • >1000: 15–30</td></tr>
         </table>
       </div>
 
       <div class="card">
-        <b>XP por feed</b>
-        <table>
-          <tr><th>Tipo</th><th>XP</th></tr>
+        <div class="card-header"><b>XP por alimentar (feed)</b></div>
+        <table class="striped" style="width:100%;border-collapse:collapse">
+          <tr><th style="text-align:left;color:#9fb0c3">Tipo</th><th style="text-align:left;color:#9fb0c3">XP</th></tr>
           <tr><td>Rainbow</td><td>300–600 (ignora V)</td></tr>
-          <tr><td>Comunes (por V)</td><td>V≤10: 300–600 • 11–100: 120–300 • 101–500: 60–120 • 501–1000: 35–70 • >1000: 20–40</td></tr>
+          <tr><td>Normal (según V)</td><td>V≤10: 300–600 • 11–100: 120–300 • 101–500: 60–120 • 501–1000: 35–70 • >1000: 20–40</td></tr>
         </table>
-        <div style="margin-top:8px">
-          <b>XP para subir de nivel</b>
-          <div><span class="k">100 + 50×nivel + 25×nivel²</span> (cap 15)</div>
+        <div class="callout" style="margin-top:10px">
+          XP para subir de nivel: <span class="k">100 + 50×nivel + 25×nivel²</span> (cap 15)
         </div>
       </div>
 
       <div class="card">
-        <b>Misiones diarias</b>
-        <ul>
+        <div class="card-header"><b>Misiones diarias</b></div>
+        <ul class="muted" style="margin:6px 0 0 18px">
           <li>Objetivos: drop 10 • give 3 • burn 5 • trade 1</li>
           <li>Recompensa principal: 2 Nist (4 en fin de semana).</li>
           <li>Extras (cooldown 48h): Rainbow 1 • Gold 1 • Black 2 • Bossfight 3.</li>
