@@ -9,22 +9,22 @@
     *{box-sizing:border-box}
     body{margin:0;background:radial-gradient(1200px 600px at 10% -10%, rgba(255,105,180,.12), transparent),var(--bg);color:var(--text);font-family:system-ui,Segoe UI,Roboto,sans-serif}
     body.animate-bg{background-size:200% 200%, auto;animation:bg-pan 30s linear infinite}
-    .wrap{max-width:980px;margin:0 auto;padding:0 16px}
+    .wrap{max-width:1280px;margin:0 auto;padding:0 16px}
     header{padding:28px 0 8px}
     .nav{display:flex;gap:14px;margin-bottom:18px}
     .nav a{color:var(--muted);text-decoration:none;font-size:14px}
     .nav a:hover{color:var(--link)}
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;padding:20px 0 32px}
-    .hero{gap:28px}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start;padding:20px 0 32px}
+    @media (max-width:1024px){.hero{grid-template-columns:1fr}}
     .hero .intro{text-align:center}
     h1{font-size:40px;margin:0 0 10px}
     p.lead{color:#b6c2cf;font-size:16px;margin:0 0 16px}
-    .tagline{font-size:26px;line-height:1.4;margin:6px auto 18px;max-width:780px;color:#c7d1dd}
+    .tagline{font-size:30px;line-height:1.35;margin:8px auto 22px;max-width:980px;color:#c7d1dd}
     .fun{font-size:20px;margin:0 auto 14px;color:#ffd1e6;display:inline-flex;gap:8px;align-items:center;animation:pop 1.6s ease-in-out infinite}
     .shiny-wrap{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:8px}
     .shiny-frame{padding:10px;border-radius:16px;background:conic-gradient(from 0deg, rgba(255,105,180,.35), rgba(122,167,255,.35), rgba(168,255,210,.35), rgba(255,105,180,.35));
       box-shadow:0 10px 30px rgba(255,105,180,.15), inset 0 0 20px rgba(255,255,255,.06);animation:glow 3s ease-in-out infinite}
-    .shiny-img{width:260px;max-width:60vw;aspect-ratio:3/4;object-fit:cover;border-radius:12px;display:block;filter:drop-shadow(0 6px 20px rgba(0,0,0,.35));animation:float 4.5s ease-in-out infinite}
+    .shiny-img{width:clamp(720px,85vw,1200px);max-width:100%;aspect-ratio:9/4;object-fit:cover;border-radius:14px;display:block;filter:drop-shadow(0 10px 28px rgba(0,0,0,.35));animation:float 4.5s ease-in-out infinite}
     .caption{font-size:12px;color:#aab6c3}
     .panel{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:14px}
     footer{color:#8292a3;font-size:12px;padding:26px 0 34px}
@@ -66,9 +66,9 @@
         <p class="tagline">Colecciona tus lambers y personajes de rol favoritos, intercambia, se robado por Xavi y entrena cartas. Disfruta de eventos que me bugean el copilot, drops especiales y una economía con Nist y Lambitos que funciona peor que la de Venezuela.</p>
         <div class="shiny-wrap">
           <div class="shiny-frame">
-            <img class="shiny-img" src="./Cartas/shiny.png" alt="Ejemplo de drop shiny" />
+            <img class="shiny-img" src="./Cartas/shiny.png?v=1" alt="Ejemplo de drop shiny (3 cartas)" />
           </div>
-          <div class="caption">Ejemplo de drop shiny</div>
+          <div class="caption">Ejemplo de shiny drop (3 cartas)</div>
         </div>
         <p class="fun">Let’s Go gambling! 🎰✨💎</p>
       </div>
@@ -104,4 +104,3 @@
   </script>
 </body>
 </html>
-
