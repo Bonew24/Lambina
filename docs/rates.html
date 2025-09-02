@@ -10,9 +10,9 @@
     body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,Segoe UI,Roboto,sans-serif;opacity:0;transition:opacity .35s ease}
     body.ready{opacity:1}
     body.fade-out{opacity:0}
-    .wrap{max-width:980px;margin:0 auto;padding:0 16px}
-    header{position:sticky;top:0;z-index:50;padding:16px 0 12px;backdrop-filter:blur(8px);background:linear-gradient(180deg,rgba(11,15,20,.85),rgba(11,15,20,.6),rgba(11,15,20,0))}
-    .nav{display:flex;gap:14px;margin-bottom:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:6px;box-shadow:0 6px 18px rgba(0,0,0,.25);overflow:auto}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+    header{position:sticky;top:0;z-index:50;padding:16px 0 12px;backdrop-filter:blur(8px);background:linear-gradient(180deg,rgba(11,15,20,.92),rgba(11,15,20,.7),rgba(11,15,20,0))}
+    .nav{display:flex;gap:14px;margin-bottom:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:6px;box-shadow:0 6px 18px rgba(0,0,0,.25);overflow:hidden}
     .nav a{color:var(--muted);text-decoration:none;font-size:14px;position:relative;padding:8px 12px;border-radius:10px;border:1px solid transparent;transition:all .2s ease}
     .nav a:hover{color:#fff;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}
     .nav a::after{display:none}
@@ -33,6 +33,9 @@
     .callout{background:rgba(122,167,255,.08);border:1px dashed rgba(122,167,255,.35);padding:10px;border-radius:12px;color:#d7e6ff}
     table.striped tr:nth-child(odd) td{background:rgba(255,255,255,.02)}
   </style>
+  <link rel="prefetch" href="./index.html" />
+  <link rel="prefetch" href="./catalogo.html" />
+  <link rel="prefetch" href="./comandos.html" />
 </head>
 <body>
   <div class="wrap">
@@ -169,13 +172,19 @@
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       document.body.classList.add('ready');
-      document.querySelectorAll('.nav a[href]')?.forEach(a => {
+      const links = document.querySelectorAll('.nav a[href]');
+      links?.forEach(a => {
+        a.addEventListener('mouseenter', () => {
+          const href = a.getAttribute('href');
+          if (!href || href.startsWith('http') || href.startsWith('#')) return;
+          fetch(href).catch(()=>{});
+        });
         a.addEventListener('click', (e) => {
           const href = a.getAttribute('href');
           if (!href || href.startsWith('http') || href.startsWith('#')) return;
           e.preventDefault();
           document.body.classList.add('fade-out');
-          setTimeout(() => location.href = href, 200);
+          setTimeout(() => location.href = href, 120);
         });
       });
     });
