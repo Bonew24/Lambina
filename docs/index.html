@@ -10,10 +10,12 @@
     body{margin:0;background:radial-gradient(1200px 600px at 10% -10%, rgba(255,105,180,.12), transparent),var(--bg);color:var(--text);font-family:system-ui,Segoe UI,Roboto,sans-serif}
     body.animate-bg{background-size:200% 200%, auto;animation:bg-pan 30s linear infinite}
     .wrap{max-width:1280px;margin:0 auto;padding:0 16px}
-    header{padding:28px 0 8px}
-    .nav{display:flex;gap:14px;margin-bottom:18px}
-    .nav a{color:var(--muted);text-decoration:none;font-size:14px}
-    .nav a:hover{color:var(--link)}
+    header{position:sticky;top:0;z-index:50;padding:16px 0 12px;backdrop-filter:blur(8px);background:linear-gradient(180deg,rgba(11,15,20,.85),rgba(11,15,20,.6),rgba(11,15,20,0))}
+    .nav{display:flex;gap:14px;margin-bottom:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:6px;box-shadow:0 6px 18px rgba(0,0,0,.25);overflow:auto}
+    .nav a{color:var(--muted);text-decoration:none;font-size:14px;position:relative;padding:8px 12px;border-radius:10px;border:1px solid transparent;transition:all .2s ease}
+    .nav a:hover{color:#fff;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}
+    .nav a::after{display:none}
+    .nav a.active{color:#0b0f14;background:linear-gradient(90deg,#ff69b4,#9ad0ff);border-color:transparent;box-shadow:0 4px 12px rgba(255,105,180,.35)}
     .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start;padding:20px 0 32px}
     @media (max-width:1024px){.hero{grid-template-columns:1fr}}
     .hero .intro{text-align:center}
@@ -54,16 +56,17 @@
   </style>
 </head>
 <body class="animate-bg">
-  <div class="wrap">
-    <header>
+  <header>
+    <div class="wrap">
       <nav class="nav">
-        <a href="./index.html" style="color:#fff">Inicio</a>
+        <a class="active" href="./index.html">Inicio</a>
         <a href="./catalogo.html">Catálogo</a>
         <a href="./comandos.html">Comandos</a>
         <a href="./rates.html">Rates</a>
       </nav>
-    </header>
-
+    </div>
+  </header>
+  <div class="wrap">
     <section class="hero">
       <div class="intro">
         <h1>Lambina, el bot TCG de Lambo</h1>
