@@ -1,0 +1,742 @@
+{
+    "cartas": [
+        {
+            "nombre": "John Woke",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\woke.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Izan PSOE",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\carta1.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Iván NO-DO",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\ivannodo.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Woah POG",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\woahpog.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Arthur Dibujito",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\arthurdibujito.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Slicer Panchito",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\slicerpanchito.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Chemaryg",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\chemaryg.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Capitán Vagina",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\capitanvagina.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Lord Massanassa",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\Lordcalvo.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Fake Lord",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\izangritando.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Lambo Espaguetis",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\carbonara.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "¿¿??",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\izancursed.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Chopper Lord",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\izanchopper.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Potato Nazi",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\potatonazi.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Potato Grinch",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\potatogrinch.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Potatoryg",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\potatoryg.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Lord Cita",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\lordcita.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Potato Calvo",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\potatocalvo.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Amor Verdadero",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\amorverdadero.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Xavi Pandemia",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\xavichiquito.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Boltrete",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\boltrete.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Xavi TikTok",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\xavitiktok.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Porrete",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\porrete.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Potato Culto",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\potatoculto.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Maidtato",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\maidtato.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Ivan PSOE",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\ivanpsoe.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Enfermerete",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\enfermerete.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Gustavo",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\gustavo.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Go to Sleep",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\gotosleep.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Go to Sleep 2",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\gotosleep1.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Go to Sleep 3",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\gotosleep2.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Brux",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\brux.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Chiwi",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\chiwi.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Izan Sandía",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\izansandia.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Paola",
+            "serie": "Original Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\paola.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Accel",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\accel.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Alana",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\alana.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Alice",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\alice.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Alice Combate",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\alicecombate.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Alma",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\alma.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Alpha",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\alpha.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Baku",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\baku.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Benedicto",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\benedicto.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Bru",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\bru.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Candace",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\candace.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Coleguita del mar",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\coleguitadelmar.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Esteban",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\esteban.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Gustavo",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\gustavo1.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Julián",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\julian.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Licaón",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\licaon.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Londres",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\londres.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Mothrel",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\mothrel.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Naoki",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\naoki.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Oiriünu",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\oiriunu.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Rufia",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\rufia.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Sojourn",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\sojourn.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Tanaka",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\tanaka.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Tiago",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\tiago.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Tobi",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\tobi.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Tobi Transformado",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\tobitransformado.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Vanessa",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\vanessa.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Zarek",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\zarek.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Zephyrus",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\zephyrus.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Tryaska",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\tryaska.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Plátano morado",
+            "serie": "Campus Sao Paolo 3",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\platanomorado.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Accel",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\accel1.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Alisa",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\alisa.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Arthur",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\arthur.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Benedicto",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\benedicto1.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Bru",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\bru1.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Carla",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\carla.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Egia",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\egia.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Gordo Cabrón",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\gordocabron.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Hayashi",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\hayashi.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Hiro",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\hiro.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Ignis",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\ignis.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Laken",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\laken.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Luna",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\luna.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Mobius",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\mobius.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Satoshi",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\satoshi.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Sho",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\sho.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Sojourn",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\sojourn1.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Solomeo",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\solomeo.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Tryaska",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\tryaska.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Xa",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\xa.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Xiao",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\xiao.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Zander",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\zander.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Naoki",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\naoki2.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Zarek",
+            "serie": "Campus Sao Paolo 2",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\zarek1.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Aelric",
+            "serie": "La Amenaza de Ziis",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\aelric.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Aventurine",
+            "serie": "La Amenaza de Ziis",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\aventurine.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Baek",
+            "serie": "La Amenaza de Ziis",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\baek.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Baron von Wurstpfote",
+            "serie": "La Amenaza de Ziis",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\baronvonwurstpfote.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Celia",
+            "serie": "La Amenaza de Ziis",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\celia.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Darian",
+            "serie": "La Amenaza de Ziis",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\darian.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Donka",
+            "serie": "La Amenaza de Ziis",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\donka.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Elira",
+            "serie": "La Amenaza de Ziis",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\elira.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Helene",
+            "serie": "La Amenaza de Ziis",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\helene.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Julio",
+            "serie": "La Amenaza de Ziis",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\julio.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Nyxar",
+            "serie": "La Amenaza de Ziis",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\nyxar.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Oktavius",
+            "serie": "La Amenaza de Ziis",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\oktavius.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Raika",
+            "serie": "La Amenaza de Ziis",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\raika.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Rebeca",
+            "serie": "La Amenaza de Ziis",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\rebeca.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Ryan",
+            "serie": "La Amenaza de Ziis",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\ryan.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Sylvia",
+            "serie": "La Amenaza de Ziis",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\sylvia.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Tessa",
+            "serie": "La Amenaza de Ziis",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\tessa.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Theo",
+            "serie": "La Amenaza de Ziis",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\theo.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Uki",
+            "serie": "La Amenaza de Ziis",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\uki.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Zoe",
+            "serie": "La Amenaza de Ziis",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\zoe.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Nanashi Mumei",
+            "serie": "Waifus Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\nanashimumei.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Kasane Teto",
+            "serie": "Waifus Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\kasaneteto.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Shinobu",
+            "serie": "Waifus Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\shinobu.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Evernight",
+            "serie": "Waifus Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\evernight.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Shouko Komi",
+            "serie": "Waifus Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\komisan.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Tinasha",
+            "serie": "Waifus Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\tinasha.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Nicki Nicole",
+            "serie": "Waifus Lambo",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\nickinicole.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Lambina",
+            "serie": "Lambina",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\lambina.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Food Mood",
+            "serie": "Lambón Comilón",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\foodmood.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Kebab las Pirámides",
+            "serie": "Lambón Comilón",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\kebablaspiramides.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Luna de Alberdi",
+            "serie": "Lambón Comilón",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\lunadealberdi.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Natsu Ramen",
+            "serie": "Lambón Comilón",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\natsuramen.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Oskar Burger",
+            "serie": "Lambón Comilón",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\oskarburger.png",
+            "rareza": "Común"
+        },
+        {
+            "nombre": "Tepuy Burger",
+            "serie": "Lambón Comilón",
+            "imagen": "F:\\Carpeta principal\\Proyectos\\Proyecto Lambina\\Cartas\\tepuyburger.png",
+            "rareza": "Común"
+        }
+    ]
+}
