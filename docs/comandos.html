@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lambina – Comandos</title>
   <style>
-    :root { --bg:#0b0f14; --panel:#121821; --muted:#a5b1c2; --text:#e6edf3; --chip:#1b2430; --link:#7aa7ff; }
+    :root { --bg:#0b0f14; --panel:#121821; --muted:#a5b1c2; --text:#e6edf3; --chip:#1b2430; --link:#7aa7ff; --accent:#ff69b4; }
     *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,Segoe UI,Roboto,sans-serif;opacity:0;transition:opacity .35s ease}
+    body{margin:0;background:radial-gradient(1200px 600px at 10% -10%, rgba(255,105,180,.12), transparent),var(--bg);color:var(--text);font-family:system-ui,Segoe UI,Roboto,sans-serif;opacity:0;transition:opacity .3s ease}
     body.ready{opacity:1}
     body.fade-out{opacity:0}
     .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
@@ -16,7 +16,7 @@
     .nav a{color:var(--muted);text-decoration:none;font-size:14px;position:relative;padding:8px 12px;border-radius:10px;border:1px solid transparent;transition:all .2s ease}
     .nav a:hover{color:#fff;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}
     .nav a::after{display:none}
-    .nav a.active{color:#0b0f14;background:linear-gradient(90deg,#ff69b4,#9ad0ff);border-color:transparent;box-shadow:0 4px 12px rgba(255,105,180,.35)}
+    .nav a.active{color:#0b0f14;background:linear-gradient(90deg,var(--accent),#9ad0ff);border-color:transparent;box-shadow:0 4px 12px rgba(255,105,180,.35)}
     h1{margin:0 0 12px}
     .card{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:14px;margin:10px 0}
     .k{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;background:var(--chip);padding:2px 6px;border-radius:8px}
@@ -103,7 +103,7 @@
           if (!href || href.startsWith('http') || href.startsWith('#')) return;
           e.preventDefault();
           document.body.classList.add('fade-out');
-          setTimeout(() => location.href = href, 120);
+          requestAnimationFrame(() => { location.href = href; });
         });
       });
     });
