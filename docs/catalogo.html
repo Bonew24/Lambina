@@ -7,12 +7,16 @@
   <style>
     :root { --bg:#0b0f14; --panel:#121821; --muted:#a5b1c2; --text:#e6edf3; --chip:#1b2430; --link:#7aa7ff; }
     *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,Segoe UI,Roboto,sans-serif}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,Segoe UI,Roboto,sans-serif;opacity:0;transition:opacity .35s ease}
+    body.ready{opacity:1}
+    body.fade-out{opacity:0}
     header{position:sticky;top:0;z-index:10;backdrop-filter:blur(8px);background:linear-gradient(180deg,rgba(18,24,33,.9),rgba(18,24,33,.6),rgba(18,24,33,0));padding:16px 20px 10px;border-bottom:1px solid rgba(255,255,255,.06)}
     .wrap{max-width:1200px;margin:0 auto;padding:0 16px}
     .nav{display:flex;gap:14px;margin-bottom:10px}
-    .nav a{color:var(--muted);text-decoration:none;font-size:14px}
+    .nav a{color:var(--muted);text-decoration:none;font-size:14px;position:relative}
+    .nav a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:linear-gradient(90deg,#ff69b4,#7aa7ff);transform:scaleX(0);transform-origin:0 50%;transition:transform .25s ease}
     .nav a:hover{color:var(--link)}
+    .nav a:hover::after{transform:scaleX(1)}
     h1{margin:4px 0 12px;font-size:22px}
     .controls{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .controls input,.controls select{background:var(--chip);color:var(--text);border:1px solid rgba(255,255,255,.08);outline:none;padding:10px 12px;border-radius:10px;font-size:14px}
@@ -24,6 +28,7 @@
     .thumb{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:10px;background:#0e141c}
     .title{font-size:14px;font-weight:600;margin-top:2px}
     .meta{font-size:12px;color:#99a3ad;display:flex;gap:8px;align-items:center}
+    @media (prefers-reduced-motion: reduce){ *{animation:none !important;transition:none !important} }
   </style>
 </head>
 <body>
@@ -99,6 +104,19 @@
 
     load().catch(err => {
       document.getElementById('grid').innerHTML = `<div style="color:#f87171">Error cargando: ${err}</div>`;
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('ready');
+      document.querySelectorAll('.nav a[href]')?.forEach(a => {
+        a.addEventListener('click', (e) => {
+          const href = a.getAttribute('href');
+          if (!href || href.startsWith('http') || href.startsWith('#')) return;
+          e.preventDefault();
+          document.body.classList.add('fade-out');
+          setTimeout(() => location.href = href, 200);
+        });
+      });
     });
   </script>
 </body>

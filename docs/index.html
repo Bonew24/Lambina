@@ -8,23 +8,48 @@
     :root { --bg:#0b0f14; --panel:#121821; --muted:#a5b1c2; --text:#e6edf3; --chip:#1b2430; --link:#7aa7ff; --accent:#ff69b4; }
     *{box-sizing:border-box}
     body{margin:0;background:radial-gradient(1200px 600px at 10% -10%, rgba(255,105,180,.12), transparent),var(--bg);color:var(--text);font-family:system-ui,Segoe UI,Roboto,sans-serif}
+    body.animate-bg{background-size:200% 200%, auto;animation:bg-pan 30s linear infinite}
     .wrap{max-width:980px;margin:0 auto;padding:0 16px}
     header{padding:28px 0 8px}
     .nav{display:flex;gap:14px;margin-bottom:18px}
     .nav a{color:var(--muted);text-decoration:none;font-size:14px}
     .nav a:hover{color:var(--link)}
     .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;padding:20px 0 32px}
+    .hero{gap:28px}
+    .hero .intro{text-align:center}
     h1{font-size:40px;margin:0 0 10px}
     p.lead{color:#b6c2cf;font-size:16px;margin:0 0 16px}
-    .cta{display:flex;gap:12px;margin-top:12px}
-    .btn{background:var(--chip);color:var(--text);border:1px solid rgba(255,255,255,.08);padding:10px 14px;border-radius:12px;text-decoration:none}
-    .btn.primary{background:var(--accent);border-color:#ff8dc4}
+    .tagline{font-size:26px;line-height:1.4;margin:6px auto 18px;max-width:780px;color:#c7d1dd}
+    .fun{font-size:20px;margin:0 auto 14px;color:#ffd1e6;display:inline-flex;gap:8px;align-items:center;animation:pop 1.6s ease-in-out infinite}
+    .shiny-wrap{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:8px}
+    .shiny-frame{padding:10px;border-radius:16px;background:conic-gradient(from 0deg, rgba(255,105,180,.35), rgba(122,167,255,.35), rgba(168,255,210,.35), rgba(255,105,180,.35));
+      box-shadow:0 10px 30px rgba(255,105,180,.15), inset 0 0 20px rgba(255,255,255,.06);animation:glow 3s ease-in-out infinite}
+    .shiny-img{width:260px;max-width:60vw;aspect-ratio:3/4;object-fit:cover;border-radius:12px;display:block;filter:drop-shadow(0 6px 20px rgba(0,0,0,.35));animation:float 4.5s ease-in-out infinite}
+    .caption{font-size:12px;color:#aab6c3}
     .panel{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:14px}
     footer{color:#8292a3;font-size:12px;padding:26px 0 34px}
+
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    @keyframes glow{0%,100%{filter:hue-rotate(0deg)}50%{filter:hue-rotate(25deg)}}
+    @keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+    @keyframes bg-pan{0%{background-position:0% 0%, 0 0}100%{background-position:100% 0%, 0 0}}
     @media (max-width:860px){.hero{grid-template-columns:1fr}}
+
+    /* Transiciones de página y navegación */
+    body{opacity:0;transition:opacity .35s ease}
+    body.ready{opacity:1}
+    body.fade-out{opacity:0}
+    .nav a{position:relative}
+    .nav a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:linear-gradient(90deg,var(--accent),var(--link));transform:scaleX(0);transform-origin:0 50%;transition:transform .25s ease}
+    .nav a:hover::after{transform:scaleX(1)}
+
+    /* Accesibilidad: reducir animaciones si el usuario lo prefiere */
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none !important;transition:none !important}
+    }
   </style>
 </head>
-<body>
+<body class="animate-bg">
   <div class="wrap">
     <header>
       <nav class="nav">
@@ -36,14 +61,16 @@
     </header>
 
     <section class="hero">
-      <div>
+      <div class="intro">
         <h1>Lambina, el bot TCG de Lambo</h1>
-        <p class="lead">Colecciona, intercambia y entrena cartas. Eventos dinámicos, drops especiales y una economía con Nist y Lambitos.</p>
-        <div class="cta">
-          <a class="btn primary" href="./catalogo.html">Ver catálogo</a>
-          <a class="btn" href="./comandos.html">Comandos</a>
-          <a class="btn" href="./rates.html">Rates</a>
+        <p class="tagline">Colecciona, intercambia y entrena cartas. Eventos dinámicos, drops especiales y una economía con Nist y Lambitos.</p>
+        <div class="shiny-wrap">
+          <div class="shiny-frame">
+            <img class="shiny-img" src="./Cartas/lambina_elite.png" alt="Ejemplo de drop shiny" />
+          </div>
+          <div class="caption">Ejemplo de drop shiny</div>
         </div>
+        <p class="fun">Let’s Go gambling! 🎰✨💎</p>
       </div>
       <div class="panel">
         <b>Novedades</b>
@@ -59,5 +86,22 @@
       Lambina © 2025
     </footer>
   </div>
+
+  <script>
+    // Fade-in al cargar y fade-out al navegar entre páginas
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('ready');
+      document.querySelectorAll('.nav a[href]')?.forEach(a => {
+        a.addEventListener('click', (e) => {
+          const href = a.getAttribute('href');
+          if (!href || href.startsWith('http') || href.startsWith('#')) return;
+          e.preventDefault();
+          document.body.classList.add('fade-out');
+          setTimeout(() => location.href = href, 200);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
+

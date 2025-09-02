@@ -7,12 +7,16 @@
   <style>
     :root { --bg:#0b0f14; --panel:#121821; --muted:#a5b1c2; --text:#e6edf3; --chip:#1b2430; --good:#22c55e; --warn:#f59e0b; --accent:#ff69b4; --link:#7aa7ff; }
     *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,Segoe UI,Roboto,sans-serif}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,Segoe UI,Roboto,sans-serif;opacity:0;transition:opacity .35s ease}
+    body.ready{opacity:1}
+    body.fade-out{opacity:0}
     .wrap{max-width:980px;margin:0 auto;padding:0 16px}
     header{padding:24px 0 12px}
     .nav{display:flex;gap:14px;margin-bottom:16px}
-    .nav a{color:var(--muted);text-decoration:none;font-size:14px}
+    .nav a{color:var(--muted);text-decoration:none;font-size:14px;position:relative}
+    .nav a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:linear-gradient(90deg,#ff69b4,#7aa7ff);transform:scaleX(0);transform-origin:0 50%;transition:transform .25s ease}
     .nav a:hover{color:var(--link)}
+    .nav a:hover::after{transform:scaleX(1)}
     h1{margin:0 0 12px}
     .card{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:14px;margin:10px 0}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
@@ -20,6 +24,7 @@
     th,td{padding:6px 8px;border-bottom:1px solid rgba(255,255,255,.06);font-size:14px;color:#c3cfdb}
     th{color:#9fb0c3;text-align:left}
     .k{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;background:var(--chip);padding:2px 6px;border-radius:8px}
+    @media (prefers-reduced-motion: reduce){ *{animation:none !important;transition:none !important} }
   </style>
 </head>
 <body>
@@ -100,5 +105,19 @@
       </div>
     </section>
   </div>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('ready');
+      document.querySelectorAll('.nav a[href]')?.forEach(a => {
+        a.addEventListener('click', (e) => {
+          const href = a.getAttribute('href');
+          if (!href || href.startsWith('http') || href.startsWith('#')) return;
+          e.preventDefault();
+          document.body.classList.add('fade-out');
+          setTimeout(() => location.href = href, 200);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
