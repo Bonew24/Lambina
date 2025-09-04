@@ -18,17 +18,13 @@
     .nav a::after{display:none}
     .nav a.active{color:#0b0f14;background:linear-gradient(90deg,#ff69b4,#9ad0ff);border-color:transparent;box-shadow:0 4px 12px rgba(255,105,180,.35)}
     h1{margin:4px 0 12px;font-size:22px}
-    .controls{display:grid;grid-template-columns:1fr 180px 180px;gap:12px}
+    .controls{display:grid;grid-template-columns:1fr;gap:12px}
     .controls input,.controls select{background:var(--chip);color:var(--text);border:1px solid rgba(255,255,255,.08);outline:none;padding:10px 12px;border-radius:10px;font-size:14px}
     main{padding:18px 0 24px}
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
-    .card{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:8px}
+    .card{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:8px;align-items:center}
     .thumb{width:100%;aspect-ratio:1/1;object-fit:contain;border-radius:10px;background:#0e141c;padding:8px}
-    .title{font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:space-between;gap:8px}
-    .code{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;background:var(--chip);padding:2px 6px;border-radius:8px;color:#cfe1ff}
-    .meta{font-size:12px;color:#99a3ad}
-    .pillbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-    .pill{background:var(--chip);border:1px solid rgba(255,255,255,.08);padding:6px 10px;border-radius:20px;color:var(--muted);font-size:12px}
+    .code{display:block;text-align:center;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;background:var(--chip);padding:6px 10px;border-radius:10px;color:#cfe1ff;font-size:18px;width:100%}
   </style>
   <link rel="prefetch" href="./index.html" />
   <link rel="prefetch" href="./catalogo.html" />
@@ -47,12 +43,7 @@
       </nav>
       <h1>Marcos disponibles</h1>
       <div class="controls">
-        <input id="q" placeholder="Buscar por código o autor…" />
-        <select id="autor"><option value="">Todos los autores</option></select>
-        <select id="orden">
-          <option value="code">Ordenar por código</option>
-          <option value="autor">Ordenar por autor</option>
-        </select>
+        <input id="q" placeholder="Buscar por código…" />
       </div>
       <div class="pillbar" id="stats"></div>
     </div>
@@ -69,16 +60,12 @@
       const map = await res.json();
       const frames = Object.entries(map).map(([code, obj]) => ({
         code,
-        file: String(obj.file||''),
-        filename: String(obj.filename||''),
-        author_id: obj.author_id ? String(obj.author_id) : ''
+        file: String(obj.file||'')
       }));
 
       const grid = document.getElementById('grid');
       const stats = document.getElementById('stats');
       const q = document.getElementById('q');
-      const autorSel = document.getElementById('autor');
-      const ordenSel = document.getElementById('orden');
 
       // Normaliza ruta a carpeta Frames relativa a este sitio
       frames.forEach(f => {
@@ -86,14 +73,9 @@
         f.webPath = `./Frames/${base}`;
       });
 
-      const autores = [...new Set(frames.map(f => f.author_id).filter(Boolean))].sort();
-      autorSel.innerHTML = '<option value="">Todos los autores</option>' + autores.map(a=>`<option value="${a}">${a}</option>`).join('');
-
       function statChips(list) {
         const total = list.length;
-        const porAutor = Object.entries(list.reduce((a,c)=>((a[c.author_id]=(a[c.author_id]||0)+1),a),{}))
-          .sort((a,b)=>b[1]-a[1]).slice(0,10).map(([s,n])=>`<span class="pill">${s||'—'}: ${n}</span>`).join('');
-        return `<span class="pill">Total: ${total}</span>${porAutor}`;
+        return `<span class="pill">Total: ${total}</span>`;
       }
 
       function render(list) {
@@ -101,34 +83,19 @@
         grid.innerHTML = list.map(f => `
           <div class="card">
             <img class="thumb" loading="lazy" src="${f.webPath}" alt="${f.code}" onerror="this.style.display='none'" />
-            <div class="title">
-              <span>${f.filename}</span>
-            </div>
-            <div class="meta">Autor: ${f.author_id || '—'}</div>
-            <div class="meta">Código: <span class="code">${f.code}</span></div>
+            <div class="code">${f.code}</div>
           </div>
         `).join('');
       }
 
       function applyFilters(){
         const term = q.value.trim().toLowerCase();
-        const autor = autorSel.value;
-        let list = frames.filter(f =>
-          (!term || f.code.toLowerCase().includes(term) || f.filename.toLowerCase().includes(term) || (f.author_id||'').includes(term)) &&
-          (!autor || f.author_id === autor)
-        );
-
-        const ord = ordenSel.value;
-        if (ord === 'autor') list.sort((a,b)=> (a.author_id||'').localeCompare(b.author_id||'') || a.code.localeCompare(b.code));
-        else list.sort((a,b)=> a.code.localeCompare(b.code));
-
+        let list = frames.filter(f => !term || f.code.toLowerCase().includes(term));
+        list.sort((a,b)=> a.code.localeCompare(b.code));
         render(list);
       }
 
       q.addEventListener('input', applyFilters);
-      autorSel.addEventListener('change', applyFilters);
-      ordenSel.addEventListener('change', applyFilters);
-
       applyFilters();
     }
 
